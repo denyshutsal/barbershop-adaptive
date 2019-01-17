@@ -1,0 +1,21 @@
+{
+  "name": "barbershop-adaptive",
+  "description": "Адаптивная версия сайта Barbershop",
+  "version": "0.0.1",
+  "contributors": [
+    {
+      "name": "Denys Hutsal",
+      "email": "denyshutsal@gmail.com",
+      "url": "https://github.com/denyshutsal/barbershop-adaptive/issues"
+    }
+  ],
+  "devDependencies": {
+    "semistandard": "^13.0.1",
+    "stylelint": "9.10.x",
+    "stylelint-config-htmlacademy": "0.1.x"
+  },
+  "scripts": {
+    "test": "semistandard && node my-normal-tests-littered-with-semicolons.js",
+    "stylelint": "stylelint ."
+  }
+}

@@ -1,7 +1,8 @@
 {
   "name": "barbershop-adaptive",
-  "description": "Адаптивная версия сайта Barbershop",
   "version": "0.0.1",
+  "private": true,
+  "description": "Адаптивная версия сайта Barbershop",
   "contributors": [
     {
       "name": "Denys Hutsal",
@@ -10,12 +11,23 @@
     }
   ],
   "devDependencies": {
+    "autoprefixer": "^9.4.5",
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
     "semistandard": "^13.0.1",
-    "stylelint": "9.10.x",
-    "stylelint-config-htmlacademy": "0.1.x"
+    "snazzy": "^8.0.0",
+    "stylelint": "~9.10.x",
+    "stylelint-config-standard": "^18.2.0"
   },
   "scripts": {
-    "test": "semistandard && node my-normal-tests-littered-with-semicolons.js",
-    "stylelint": "stylelint ."
+    "test": "semistandard --verbose | snazzy",
+    "jsfix": "semistandard --fix",
+    "csslint": "stylelint \"source/sass/**/*.scss\" || echo \">>>> WARNING! <<<< (lint faild for some file(s)).\"",
+    "cssfix": "stylelint \"source/sass/**/*.scss\" --fix",
+    "build": "gulp css",
+    "start": "gulp start"
   }
 }

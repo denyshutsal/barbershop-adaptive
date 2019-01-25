@@ -25,7 +25,7 @@
   "scripts": {
     "test": "semistandard --verbose | snazzy",
     "jsfix": "semistandard --fix",
-    "csslint": "stylelint \"source/sass/**/*.scss\" || echo \">>>> WARNING! <<<< (lint faild for some file(s)).\"",
+    "csslint": "stylelint \"source/sass/**/*.scss\" || exit 0",
     "cssfix": "stylelint \"source/sass/**/*.scss\" --fix",
     "build": "gulp css",
     "start": "gulp start"

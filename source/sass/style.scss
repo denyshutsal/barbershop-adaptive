@@ -1,5 +1,8 @@
 @import
-  "normalize",
-  "variables",
-  "mixins",
-  "base";
+  'normalize',
+  'variables',
+  'mixins',
+  'base';
+@import
+  'blocks/page-header',
+  'blocks/main-nav';

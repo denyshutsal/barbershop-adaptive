@@ -474,9 +474,8 @@ main-nav.scss
 ========================================================================== */
 .main-nav {
   position: relative;
-  width: 320px;
+  width: auto;
   min-height: 51px;
-  margin: 0 auto;
   background-color: #826550;
 }
 
@@ -619,17 +618,12 @@ main-nav.scss
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    width: 640px;
+    width: 84%;
+    max-width: 960px;
     margin: 0 auto;
   }
   .main-nav__toggle {
     display: none;
-  }
-}
-
-@media (min-width: 1200px) {
-  .main-nav__wrapper {
-    width: 960px;
   }
 }
 
@@ -675,7 +669,9 @@ site-list.scss
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    width: 570px;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
   }
   .site-list__item {
     margin-right: 32px;

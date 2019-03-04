@@ -40,7 +40,7 @@ site-list.scss
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    width: 570px;
+    flex-grow: 1;
   }
 
   .site-list__item {

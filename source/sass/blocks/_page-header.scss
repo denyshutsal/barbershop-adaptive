@@ -33,6 +33,10 @@ page-header.scss
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url('../img/bg-header@2x.jpg');
+    }
   }
 
   .page-header__logo img {
@@ -47,8 +51,6 @@ page-header.scss
 @media (min-width: $desktop-width) {
   .page-header__logo {
     height: 648px;
-    background-position: center 0;
-    background-size: cover;
   }
 
   .page-header__logo img {

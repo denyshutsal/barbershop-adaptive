@@ -615,12 +615,17 @@ main-nav.scss
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    width: 84%;
-    max-width: 960px;
+    width: 640px;
     margin: 0 auto;
   }
   .main-nav__toggle {
     display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-nav__wrapper {
+    width: 960px;
   }
 }
 
@@ -831,7 +836,7 @@ user-list.scss
 stats.scss
 ========================================================================== */
 .stats {
-  width: 320px;
+  width: auto;
   margin: 0 auto;
 }
 
@@ -935,7 +940,7 @@ stats.scss
 @media (min-width: 768px) {
   .stats {
     width: 640px;
-    margin-top: -185px;
+    margin-top: -173px;
   }
   .stats__header {
     position: relative;

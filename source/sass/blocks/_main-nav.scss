@@ -155,12 +155,17 @@ main-nav.scss
   .main-nav__wrapper {
     display: flex;
     justify-content: space-between;
-    width: 84%;
-    max-width: 960px;
+    width: 640px;
     margin: 0 auto;
   }
 
   .main-nav__toggle {
     display: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-nav__wrapper {
+    width: 960px;
   }
 }

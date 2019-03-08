@@ -5,7 +5,7 @@ stats.scss
 ========================================================================== */
 
 .stats {
-  width: 320px;
+  width: auto;
   margin: 0 auto;
 }
 
@@ -109,7 +109,7 @@ stats.scss
 @media (min-width: $tablet-width) {
   .stats {
     width: 640px;
-    margin-top: -185px;
+    margin-top: -173px;
   }
 
   .stats__header {

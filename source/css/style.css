@@ -423,6 +423,7 @@ page-header.scss
 .page-header__logo {
   height: 85px;
   text-align: center;
+  background-color: #242424;
 }
 
 .page-header__logo img {
@@ -943,9 +944,13 @@ stats.scss
   font-size: 18px;
   line-height: 18px;
   text-align: right;
+  color: #f7f4f1;
 }
 
 @media (min-width: 768px) {
+  .stats-container {
+    background-color: #353535;
+  }
   .stats {
     width: 640px;
     margin-top: -173px;
@@ -1057,5 +1062,57 @@ stats.scss
     display: -ms-flexbox;
     display: flex;
     width: 640px;
+  }
+}
+
+/* ==========================================================================
+advantages.scss
+========================================================================== */
+.advantages {
+  padding-top: 40px;
+  background-color: #242424;
+}
+
+.advantages__slider {
+  max-width: 67%;
+  margin: 0 auto;
+}
+
+.owl-carousel {
+  text-align: center;
+}
+
+.advantages__title {
+  margin-bottom: 12px;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.advantages__description {
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .advantages {
+    background-color: #353535;
+  }
+  .advantages__slider {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 575px;
+  }
+  .advantages__slider .item {
+    position: relative;
+    padding-left: 125px;
+  }
+  .advantages__slider svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .advantages__description {
+    margin-top: 12px;
   }
 }

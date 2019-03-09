@@ -23,6 +23,10 @@ mixins.scss
   list-style: none;
 }
 
+@mixin outline {
+  outline: 1px solid red;
+}
+
 // @mixin clear-link {
 //   overflow: hidden;
 //   text-decoration: none;

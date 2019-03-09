@@ -1,0 +1,57 @@
+@import '../variables';
+
+/* ==========================================================================
+advantages.scss
+========================================================================== */
+
+.advantages {
+  padding-top: 40px;
+  background-color: $advantages-mobile-bg-color;
+}
+
+.advantages__slider {
+  max-width: 67%;
+  margin: 0 auto;
+}
+
+.owl-carousel {
+  text-align: center;
+}
+
+.advantages__title {
+  margin-bottom: 12px;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.advantages__description {
+  font-size: 20px;
+}
+
+@media (min-width: $tablet-width) {
+  .advantages {
+    background-color: $stats-advantages-bg-color;
+  }
+
+  .advantages__slider {
+    box-sizing: border-box;
+    width: 575px;
+
+    .item {
+      position: relative;
+      padding-left: 125px;
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .advantages__description {
+    margin-top: 12px;
+  }
+}

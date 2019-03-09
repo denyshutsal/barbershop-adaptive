@@ -104,9 +104,14 @@ stats.scss
   font-size: 18px;
   line-height: 18px;
   text-align: right;
+  color: #f7f4f1;
 }
 
 @media (min-width: $tablet-width) {
+  .stats-container {
+    background-color: $stats-advantages-bg-color;
+  }
+
   .stats {
     width: 640px;
     margin-top: -173px;

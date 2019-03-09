@@ -12,6 +12,7 @@ page-header.scss
 .page-header__logo {
   height: 85px;
   text-align: center;
+  background-color: $page-header-mobile-bg-color;
 }
 
 .page-header__logo img {

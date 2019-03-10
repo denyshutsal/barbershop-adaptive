@@ -1074,8 +1074,12 @@ advantages.scss
 }
 
 .advantages__slider {
-  max-width: 67%;
+  width: 67%;
   margin: 0 auto;
+}
+
+.advantages__slider svg {
+  margin-bottom: 25px;
 }
 
 .owl-carousel {
@@ -1083,6 +1087,7 @@ advantages.scss
 }
 
 .advantages__title {
+  margin: 0;
   margin-bottom: 12px;
   font-size: 30px;
   line-height: 30px;
@@ -1092,6 +1097,8 @@ advantages.scss
 
 .advantages__description {
   font-size: 20px;
+  margin: 0;
+  margin-bottom: 15px;
 }
 
 @media (min-width: 768px) {
@@ -1099,20 +1106,66 @@ advantages.scss
     background-color: #353535;
   }
   .advantages__slider {
+    width: 75%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    width: 575px;
   }
   .advantages__slider .item {
     position: relative;
     padding-left: 125px;
+    padding-bottom: 35px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #4a4a4a;
+  }
+  .advantages__slider .item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 50px;
+    border-bottom: none;
   }
   .advantages__slider svg {
+    margin: 0;
     position: absolute;
     top: 0;
     left: 0;
   }
   .advantages__description {
-    margin-top: 12px;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .advantages {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .advantages__slider {
+    width: 960px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .advantages__slider .item {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 319px;
+    text-align: center;
+    margin: 0;
+    padding: 0 40px;
+    border: 0;
+    border-right: 1px solid #4a4a4a;
+  }
+  .advantages__slider .item:last-child {
+    padding-bottom: 0;
+    border: none;
+  }
+  .advantages__slider svg {
+    position: initial;
+    margin-bottom: 25px;
   }
 }

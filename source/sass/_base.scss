@@ -1,3 +1,5 @@
+@import 'variables';
+
 /* ==========================================================================
 base.scss
 ========================================================================== */
@@ -31,4 +33,39 @@ img {
   padding: 0;
   border: 0;
   white-space: nowrap;
+}
+
+.button {
+  box-sizing: border-box;
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid #e5ddd5;
+  font-family: 'PT Sans Narrow', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: inherit;
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:link,
+  &:visited,
+  &:focus {
+    background-color: transparent;
+  }
+
+  &:hover {
+    border: 1px solid #d5c9bd;
+  }
+
+  &:active {
+    background-color: #d5c9bd;
+    color: #a99f95;
+  }
 }

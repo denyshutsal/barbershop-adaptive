@@ -1253,6 +1253,10 @@ news.scss
   border-bottom: none;
 }
 
+.news__item:last-child {
+  display: none;
+}
+
 .news__date {
   position: absolute;
   top: 10px;
@@ -1349,9 +1353,6 @@ news.scss
   .news__item:nth-child(2) {
     margin-right: 0;
     padding-bottom: 0;
-  }
-  .news__item:last-child {
-    display: none;
   }
 }
 

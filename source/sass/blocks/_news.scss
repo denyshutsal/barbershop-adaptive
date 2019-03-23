@@ -50,6 +50,10 @@ news.scss
     margin-bottom: 0;
     border-bottom: none;
   }
+
+  &:last-child {
+    display: none;
+  }
 }
 
 .news__date {
@@ -137,10 +141,6 @@ news.scss
     &:nth-child(2) {
       margin-right: 0;
       padding-bottom: 0;
-    }
-
-    &:last-child {
-      display: none;
     }
   }
 }

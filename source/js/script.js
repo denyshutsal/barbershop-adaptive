@@ -14,7 +14,7 @@ navToggle.addEventListener('click', function () {
 });
 
 
-// Owl carousel settings (Advantages section)
+// Owl carousels settings
 //----------------------------------------------------------------------
 $(document).ready(function() {
   if ( $(window).width() < 768 ) {
@@ -29,7 +29,7 @@ $(document).ready(function() {
       }
     });
   } else {
-    $('.advantages__slider').removeClass('owl-carousel owl-theme owl-loaded owl-drag');
+    $('.advantages__slider, .reviews__slider').removeClass('owl-carousel owl-theme owl-loaded owl-drag');
   }
 });
 
@@ -42,7 +42,7 @@ $(window).resize(function() {
 });
 
 function startCarousel(){
-  $('.advantages__slider').addClass('owl-carousel owl-theme owl-loaded owl-drag');
+  $('.advantages__slider, .reviews__slider').addClass('owl-carousel owl-theme owl-loaded owl-drag');
   $('.owl-carousel').owlCarousel({
     loop:true,
     margin:50,
@@ -57,6 +57,5 @@ function startCarousel(){
 
 function stopCarousel() {
   $('.owl-carousel').trigger('destroy.owl.carousel');
-  $('.advantages__slider').removeClass('owl-carousel owl-theme owl-loaded owl-drag');
+  $('.advantages__slider, .reviews__slider').removeClass('owl-carousel owl-theme owl-loaded owl-drag');
 }
-

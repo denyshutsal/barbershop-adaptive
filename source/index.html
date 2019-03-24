@@ -35,7 +35,9 @@
         <ul class="main-nav__list user-list">
           <li class="user-list__item">
             <a class="user-list__login" href="login.html">
-                <svg class="user-list__login-icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/><polygon points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/></svg>
+                <svg class="user-list__login-icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                  <polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7"/><polygon points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0"/>
+                </svg>
               Войти
             </a>
           </li>
@@ -138,37 +140,43 @@
     </section>
 
     <section class="reviews">
-      <div class="reviews__wrapper slider">
+      <div class="reviews__wrapper">
         <h2 class="reviews__title">Отзывы о нас</h2>
         <a href="#" class="reviews__write button">Оставить свой</a>
-        <div class="reviews__list slider__list">
-          <blockquote class="reviews__item slider__item">
-            <p class="reviews__author-picture"><img src="img/picture-travis.jpg" width="50" height="33" alt="Фото Трэвиса Баркера"
-                class="reviews__author-image"></p>
+        <div class="reviews__slider owl-carousel owl-theme">
+          <blockquote class="item reviews__item">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/travis-desktop.jpg 1x, img/travis-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/travis-tablet.jpg 1x, img/travis-tablet@2x.jpg 2x">
+              <img class="reviews__author-image" src="img/travis-mobile.jpg" srcset="img/travis-mobile@2x.jpg 2x" alt="Фото Трэвиса Баркера">
+            </picture>
             <cite class="reviews__author-name">Трэвис Баркер</cite>
-            <p class="reviews__text">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно
-              новую татуировку!</p>
+            <p class="reviews__text">Спасибо за бороду! Был проездом в Москве,
+              заскочил побриться, чтобы было видно
+            новую татуировку!</p>
           </blockquote>
-          <blockquote class="reviews__item slider__item">
-            <p class="reviews__author-picture"><img src="img/picture-john.jpg" width="50" height="33" alt="Фото Джона Смита"
-                class="reviews__author-image"></p>
+          <blockquote class="item reviews__item">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/john-desktop.jpg 1x, img/john-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/john-tablet.jpg 1x, img/john-tablet@2x.jpg 2x">
+              <img class="reviews__author-image" src="img/john-mobile.jpg" srcset="img/john-mobile@2x.jpg 2x" alt="Фото Джона Смита">
+            </picture>
             <cite class="reviews__author-name">Джон Смит</cite>
-            <p class="reviews__text">Отличную стрижку мне сделали ребята.</p>
+            <p class="reviews__text">Отличную стрижку мне сделали ребята.
+              Профессионализм виден сразу. Теперь я ваш постоянный
+              клиент!</p>
           </blockquote>
-          <blockquote class="reviews__item slider__item">
-            <p class="reviews__author-picture"><img src="img/picture-ivan.jpg" width="50" height="33" alt="Фото Ивана Бородайло"
-                class="reviews__author-image"></p>
+          <blockquote class="item reviews__item">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/ivan-desktop.jpg 1x, img/ivan-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/ivan-tablet.jpg 1x, img/ivan-tablet@2x.jpg 2x">
+              <img class="reviews__author-image" src="img/ivan-mobile.jpg" srcset="img/ivan-mobile@2x.jpg 2x" alt="Фото Ивана Бородайло">
+            </picture>
             <cite class="reviews__author-name">Иван Бородайло</cite>
-            <p class="reviews__text">В Бородинском ваша борода в надёжных руках!</p>
+            <p class="reviews__text">В Бородинском ваша борода в надёжных
+              руках Отличную стрижку мне сделали ребята.</p>
           </blockquote>
-          <button class="reviews__prev" type="button">Предыдущий отзыв</button>
-          <button class="reviews__next" type="button">Следующий отзыв</button>
         </div>
-        <p class="reviews__toggles slider__toggles">
-          <button class="slider__toggle" type="button">1</button>
-          <button class="slider__toggle" type="button">2</button>
-          <button class="slider__toggle" type="button">3</button>
-        </p>
       </div>
     </section>
   </main>

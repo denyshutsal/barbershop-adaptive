@@ -59,13 +59,4 @@ img {
   &:focus {
     background-color: transparent;
   }
-
-  &:hover {
-    border: 1px solid #d5c9bd;
-  }
-
-  &:active {
-    background-color: #d5c9bd;
-    color: #a99f95;
-  }
 }

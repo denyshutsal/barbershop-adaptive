@@ -111,18 +111,27 @@ reviews.scss
 
   .reviews__text {
     margin-bottom: 0;
-
   }
 }
 
 @media (min-width: $desktop-width) {
-
   .reviews__wrapper {
     width: 960px;
   }
 
   .reviews__title {
     margin-left: 70px;
+  }
+
+  .reviews__write {
+    &:hover {
+      border: 1px solid #d5c9bd;
+    }
+
+    &:active {
+      background-color: #d5c9bd;
+      color: #a99f95;
+    }
   }
 
   .reviews__slider {

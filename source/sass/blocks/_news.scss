@@ -159,11 +159,36 @@ news.scss
     margin-left: 70px;
   }
 
+  .news__to-all--top {
+    &:hover {
+      border: 1px solid #d5c9bd;
+    }
+
+    &:active {
+      background-color: #d5c9bd;
+      color: #a99f95;
+    }
+  }
+
   .news__item {
     width: 21%;
 
     &:last-child {
       display: block;
     }
+
+    &:hover {
+      color: #826550;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: #513928;
+      text-decoration: underline;
+    }
+  }
+
+  .news__text {
+    cursor: pointer;
   }
 }

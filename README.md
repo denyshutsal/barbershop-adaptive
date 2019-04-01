@@ -1,3 +1,3 @@
 # barbershop-adaptive
 
-Адаптивная версия сайта Barbershop
+Адаптивная версия сайта Barbershop для портфолио.

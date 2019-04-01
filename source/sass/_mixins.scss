@@ -2,7 +2,6 @@
 mixins.scss
 ========================================================================== */
 
-// ?????????????????
 .no-outline {
   outline: none;
   background: transparent;
@@ -22,7 +21,7 @@ mixins.scss
   outline: 1px solid red;
 }
 
-// @mixin clear-link {
-//   overflow: hidden;
-//   text-decoration: none;
-// }
+@mixin clear-link {
+  overflow: hidden;
+  text-decoration: none;
+}

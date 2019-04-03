@@ -61,7 +61,6 @@ node_modules
 app.yaml
 npm-debug.*
 .npmrc
-node_modules
 config.gypi
 *.orig
 .git

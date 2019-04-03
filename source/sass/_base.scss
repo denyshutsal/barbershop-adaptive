@@ -5,6 +5,7 @@ base.scss
 ========================================================================== */
 
 body {
+  position: relative;
   min-width: 320px;
   margin: 0;
   padding: 0;
@@ -35,6 +36,22 @@ img {
   white-space: nowrap;
 }
 
+input,
+textarea,
+select {
+  box-sizing: border-box;
+}
+
+input,
+textarea {
+  border: none;
+  background: none;
+}
+
+input:focus {
+  outline: none;
+}
+
 .button {
   box-sizing: border-box;
   display: inline-block;
@@ -43,10 +60,7 @@ img {
   padding-left: 30px;
   padding-right: 30px;
   border: 1px solid #e5ddd5;
-  font-family: 'PT Sans Narrow', Arial, 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
   color: inherit;
   background-color: transparent;
   text-align: center;

@@ -28,8 +28,8 @@
       <div class="main-nav__wrapper">
         <ul class="main-nav__list site-list">
           <li class="site-list__item site-list__item--active"><a>Главная</a></li>
-          <li class="site-list__item"><a href="photo.html">Наши работы</a></li>
-          <li class="site-list__item"><a href="form.html">Записаться</a></li>
+          <li class="site-list__item"><a href="#">Наши работы</a></li>
+          <li class="site-list__item"><a href="#">Записаться</a></li>
           <li class="site-list__item"><a href="#">Контакты</a></li>
           <li class="site-list__item"><a href="#">HTML Academy</a></li>
         </ul>
@@ -242,9 +242,35 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
-  <script src="libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+  <div class="login-modal">
+    <h2 class="login-modal__title">Личный кабинет</h2>
+    <p class="login-modal__text">Введите свой логин и пароль, чтобы войти</p>
+    <form class="login-form form" action="#" method="post">
+      <label for="login-field" class="visually-hidden">Логин</label>
+      <input class="login-form__input login-form__input-text" type="text"
+             name="user-login" id="login-field"
+             placeholder="Логин" aria-label="login" spellcheck="false"
+      autofocus required>
+      <label for="password-field" class="visually-hidden">Пароль</label>
+      <input class="login-form__input login-form__input-password" type="password"
+             name="user-password" id="password-field" placeholder="Пароль"
+             aria-label="password"
+             autocomplete="off" required>
+      <a class="login-form__restore-link" href="#">Я забыл пароль!</a>
+      <button class="login-form__submit-button button" type="submit">Войти
+      </button>
+      <button class="login-modal__close-button button" type="button">Закрыть
+      </button>
+    </form>
+  </div>
+  <div class="modal-overlay"></div>
+
+  <script src="js/hamburger.js"></script>
+  <script src="js/login-modal.js"></script>
   <script src="js/script.js"></script>
+  <script src="libs/jquery-3.3.1.min.js"></script>
+  <script src="libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+  <script src="js/owl-carousel.js"></script>
 
 </body>
 

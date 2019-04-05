@@ -4,6 +4,11 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
+const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
+const csso = require('gulp-csso');
+const svgstore = require('gulp-svgstore');
+const rename = require('gulp-rename');
 const autoprefixer = require('autoprefixer');
 const server = require('browser-sync').create();
 
@@ -15,7 +20,46 @@ gulp.task('css', function () {
       autoprefixer()
     ]))
     .pipe(gulp.dest('source/css'))
+    .pipe(csso({
+      restructure: false,
+    }))
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest('source/css'))
     .pipe(server.stream());
+});
+
+gulp.task('images', function () {
+  return gulp.src('source/img/*')
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: false},
+          {cleanupIDs: false}
+        ]
+      })
+    ]))
+    .pipe(gulp.dest('source/img'));
+});
+
+// Webp (options) https://github.com/imagemin/imagemin-webp#imageminwebpoptions
+// Crop - Object { x: number, y: number, width: number,
+// height: number }
+// Resize the image. Happens after crop - Object { width: number, height:
+// number }
+gulp.task('webp', function () {
+  return gulp.src('source/img/*.{jpg,png}')
+      .pipe(webp({quality: 50}))
+      .pipe(gulp.dest('source/img'));
+});
+
+gulp.task('svgstore', function () {
+  return gulp.src('source/img/icon-*.svg')
+    .pipe(svgstore({ inlineSvg: true }))
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest('source/img'));
 });
 
 gulp.task('server', function () {

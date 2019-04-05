@@ -13,20 +13,36 @@
   "devDependencies": {
     "autoprefixer": "^9.4.5",
     "browser-sync": "^2.26.3",
+    "browserslist": "^4.5.4",
     "gulp": "^4.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-webp": "^4.0.1",
     "semistandard": "^13.0.1",
     "snazzy": "^8.0.0",
     "stylelint": "~9.10.x",
     "stylelint-config-standard": "^18.2.0"
   },
+  "browserslist": [
+    "last 2 version",
+    "not ie <= 10",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
   "scripts": {
     "test": "semistandard --verbose | snazzy",
     "jsfix": "semistandard --fix",
     "csslint": "stylelint \"source/sass/**/*.scss\" || exit 0",
     "cssfix": "stylelint \"source/sass/**/*.scss\" --fix",
+    "images": "gulp images",
+    "svgstore": "gulp svgstore",
+    "webp": "gulp webp",
     "build": "gulp css",
     "start": "gulp start"
   }

@@ -29,11 +29,7 @@
     "stylelint-config-standard": "^18.2.0"
   },
   "browserslist": [
-    "last 2 version",
-    "not ie <= 10",
-    "> 1%",
-    "maintained node versions",
-    "not dead"
+    "defaults"
   ],
   "scripts": {
     "test": "semistandard --verbose | snazzy",

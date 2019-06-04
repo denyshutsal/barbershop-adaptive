@@ -40,6 +40,7 @@ advantages.scss
 
 @media (min-width: $tablet-width) {
   .advantages {
+    padding-top: 370px;
     padding-bottom: 40px;
     background-color: $stats-advantages-bg-color;
   }
@@ -77,7 +78,7 @@ advantages.scss
 
 @media (min-width: $desktop-width) {
   .advantages {
-    padding-top: 80px;
+    padding-top: 215px;
   }
 
   .advantages__slider {
@@ -101,7 +102,7 @@ advantages.scss
     }
 
     svg {
-      position: initial;
+      position: inherit;
       margin-bottom: 25px;
     }
   }

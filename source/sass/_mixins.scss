@@ -25,3 +25,11 @@ mixins.scss
   overflow: hidden;
   text-decoration: none;
 }
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

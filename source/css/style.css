@@ -376,33 +376,31 @@ body {
   position: relative;
   min-width: 320px;
   margin: 0;
-  padding: 0;
   font-size: 18px;
   line-height: 27px;
-  font-family: 'PT Sans Narrow', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  color: #f7f4f1;
+  font-family: "PT Sans Narrow", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
+  color: #f7f4f1;
   background-color: #292929;
 }
 
 img {
   max-width: 100%;
   height: auto;
+  vertical-align: middle;
+  border-style: none;
 }
 
-.visually-hidden:not(:focus):not(:active) {
+.visually-hidden {
   position: absolute;
-  overflow: hidden;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  z-index: -1;
+  width: 0;
+  height: 0;
   padding: 0;
-  border: 0;
-  white-space: nowrap;
+  margin: 0;
+  border: none;
+  overflow: hidden;
 }
 
 input,
@@ -424,11 +422,9 @@ input:focus {
 .button {
   box-sizing: border-box;
   display: inline-block;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 15px 30px;
   border: 1px solid #e5ddd5;
+  font: inherit;
   font-weight: 700;
   color: inherit;
   background-color: transparent;
@@ -436,10 +432,6 @@ input:focus {
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
-}
-
-.button:link, .button:visited, .button:focus {
-  background-color: transparent;
 }
 
 /* ==========================================================================
@@ -451,15 +443,16 @@ page-header.scss
 }
 
 .page-header__logo {
-  height: 85px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85px;
   background-color: #242424;
 }
 
 .page-header__logo img {
   width: 226px;
   height: 30px;
-  margin-top: 29px;
 }
 
 @media (min-width: 768px) {
@@ -468,8 +461,8 @@ page-header.scss
   }
   .page-header__logo {
     order: 2;
-    width: 100%;
-    height: 400px;
+    align-items: flex-start;
+    min-height: 400px;
     background-color: #000;
     background-image: url("../img/bg-header.jpg");
     background-repeat: no-repeat;
@@ -488,17 +481,17 @@ page-header.scss
   .page-header__logo img {
     display: block;
     width: 370px;
-    height: auto;
-    margin: 0 auto;
+    height: 101px;
     margin-top: 40px;
   }
 }
 
 @media (min-width: 1200px) {
   .page-header__logo {
-    height: 648px;
+    min-height: 648px;
   }
   .page-header__logo img {
+    height: 154px;
     margin-top: 57px;
   }
 }
@@ -508,7 +501,6 @@ main-nav.scss
 ========================================================================== */
 .main-nav {
   position: relative;
-  width: auto;
   min-height: 51px;
   background-color: #826550;
 }
@@ -638,7 +630,6 @@ main-nav.scss
 
 @media (min-width: 768px) {
   .main-nav {
-    width: auto;
     margin: 0;
     background-color: #000;
   }
@@ -859,7 +850,7 @@ user-list.scss
 stats.scss
 ========================================================================== */
 .stats {
-  width: auto;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -963,15 +954,19 @@ stats.scss
 
 @media (min-width: 768px) {
   .stats-container {
-    background-color: #353535;
+    position: relative;
+    width: 640px;
+    margin: 0 auto;
   }
   .stats {
     width: 640px;
-    margin-top: -173px;
+    position: absolute;
+    top: -173px;
   }
   .stats__header {
     position: relative;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
   }
@@ -1007,12 +1002,26 @@ stats.scss
   .stats__legend--bottom {
     display: none;
   }
+  /**
+ * 1. https://stackoverflow.com/questions/35451371/flex-css-property-in-table-doesnt-work-on-ie-and-firefox
+ */
+  .stats__list {
+    display: block;
+    /* 1 */
+  }
   .stats__list tbody {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
   }
+  /**
+  * 1. https://stackoverflow.com/questions/35451371/flex-css-property-in-table-doesnt-work-on-ie-and-firefox
+  */
   .stats__list tr {
-    width: 250px;
+    display: block;
+    /* 1 */
+    box-sizing: border-box;
+    width: 50%;
     padding: 25px 35px;
     padding-bottom: 28px;
   }
@@ -1037,13 +1046,17 @@ stats.scss
 }
 
 @media (min-width: 1200px) {
+  .stats-container {
+    width: 960px;
+  }
   .stats {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     width: 960px;
-    margin-top: -159px;
+    top: -159px;
   }
   .stats__header {
-    display: block;
     width: 240px;
   }
   .stats__header::before {
@@ -1062,7 +1075,6 @@ stats.scss
     width: auto;
   }
   .stats__list {
-    display: flex;
     width: 640px;
   }
 }
@@ -1106,6 +1118,7 @@ advantages.scss
 
 @media (min-width: 768px) {
   .advantages {
+    padding-top: 370px;
     padding-bottom: 40px;
     background-color: #353535;
   }
@@ -1138,7 +1151,7 @@ advantages.scss
 
 @media (min-width: 1200px) {
   .advantages {
-    padding-top: 80px;
+    padding-top: 215px;
   }
   .advantages__slider {
     width: 960px;
@@ -1159,7 +1172,7 @@ advantages.scss
     border: none;
   }
   .advantages__slider svg {
-    position: initial;
+    position: inherit;
     margin-bottom: 25px;
   }
 }
@@ -1610,7 +1623,7 @@ page-footer.scss
     width: 960px;
   }
   .page-footer__social {
-    order: initial;
+    order: inherit;
     display: block;
     width: 165px;
     margin: 0;
@@ -1659,7 +1672,7 @@ login-modal.scss
   display: none;
   box-sizing: border-box;
   position: absolute;
-  top: 85px;
+  top: 0;
   z-index: 30;
   width: 100%;
   padding-top: 50px;
@@ -1674,7 +1687,6 @@ login-modal.scss
 @media (min-width: 460px) {
   .login-modal {
     position: fixed;
-    top: 85px;
     left: 50%;
     margin-left: -230px;
     z-index: 30;

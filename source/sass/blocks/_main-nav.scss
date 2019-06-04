@@ -6,7 +6,6 @@ main-nav.scss
 
 .main-nav {
   position: relative;
-  width: auto;
   min-height: 51px;
   background-color: #826550;
 }
@@ -147,7 +146,6 @@ main-nav.scss
 
 @media (min-width: $tablet-width) {
   .main-nav {
-    width: auto;
     margin: 0;
     background-color: #000;
   }

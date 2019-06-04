@@ -5,7 +5,7 @@ stats.scss
 ========================================================================== */
 
 .stats {
-  width: auto;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -109,17 +109,21 @@ stats.scss
 
 @media (min-width: $tablet-width) {
   .stats-container {
-    background-color: $stats-advantages-bg-color;
+    position: relative;
+    width: 640px;
+    margin: 0 auto;
   }
 
   .stats {
     width: 640px;
-    margin-top: -173px;
+    position: absolute;
+    top: -173px;
   }
 
   .stats__header {
     position: relative;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 
@@ -160,13 +164,28 @@ stats.scss
     display: none;
   }
 
+  /**
+ * 1. https://stackoverflow.com/questions/35451371/flex-css-property-in-table-doesnt-work-on-ie-and-firefox
+ */
+
+  .stats__list {
+    display: block; /* 1 */
+  }
+
   .stats__list tbody {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
   }
 
+  /**
+  * 1. https://stackoverflow.com/questions/35451371/flex-css-property-in-table-doesnt-work-on-ie-and-firefox
+  */
+
   .stats__list tr {
-    width: 250px;
+    display: block; /* 1 */
+    box-sizing: border-box;
+    width: 50%;
     padding: 25px 35px;
     padding-bottom: 28px;
   }
@@ -195,14 +214,19 @@ stats.scss
 }
 
 @media (min-width: $desktop-width) {
+  .stats-container {
+    width: 960px;
+  }
+
   .stats {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     width: 960px;
-    margin-top: -159px;
+    top: -159px;
   }
 
   .stats__header {
-    display: block;
     width: 240px;
 
     &::before {
@@ -226,7 +250,6 @@ stats.scss
   }
 
   .stats__list {
-    display: flex;
     width: 640px;
   }
 }

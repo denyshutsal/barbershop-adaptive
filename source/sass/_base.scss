@@ -8,32 +8,31 @@ body {
   position: relative;
   min-width: 320px;
   margin: 0;
-  padding: 0;
-  font-size: 18px;
-  line-height: 27px;
-  font-family: 'PT Sans Narrow', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  color: #f7f4f1;
-  font-style: normal;
-  font-weight: normal;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-family: $font-family-sans-serif;
+  font-style: $font-style-base;
+  font-weight: $font-weight-base;
+  color: $color-base;
   background-color: $bg-darkgrey;
 }
 
 img {
   max-width: 100%;
   height: auto;
+  vertical-align: middle;
+  border-style: none;
 }
 
-.visually-hidden:not(:focus):not(:active) {
+.visually-hidden {
   position: absolute;
-  overflow: hidden;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  z-index: -1;
+  width: 0;
+  height: 0;
   padding: 0;
-  border: 0;
-  white-space: nowrap;
+  margin: 0;
+  border: none;
+  overflow: hidden;
 }
 
 input,
@@ -55,11 +54,9 @@ input:focus {
 .button {
   box-sizing: border-box;
   display: inline-block;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 15px 30px;
   border: 1px solid #e5ddd5;
+  font: inherit;
   font-weight: 700;
   color: inherit;
   background-color: transparent;
@@ -67,10 +64,4 @@ input:focus {
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
-
-  &:link,
-  &:visited,
-  &:focus {
-    background-color: transparent;
-  }
 }

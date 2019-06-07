@@ -253,22 +253,23 @@
   <div class="login-modal">
     <h2 class="login-modal__title">Личный кабинет</h2>
     <p class="login-modal__text">Введите свой логин и пароль, чтобы войти</p>
-    <form class="login-form form" action="#" method="post">
+    <form class="login-modal__form" action="#" method="post">
       <label for="login-field" class="visually-hidden">Логин</label>
-      <input class="login-form__input login-form__input-text" type="text"
+      <input class="login-modal__input login-modal__input-text" type="text"
              name="user-login" id="login-field"
-             placeholder="Логин" aria-label="login" spellcheck="false"
+             placeholder="Логин" aria-label="user-login" autocomplete="off" spellcheck="false"
       autofocus required>
       <label for="password-field" class="visually-hidden">Пароль</label>
-      <input class="login-form__input login-form__input-password" type="password"
+      <input class="login-modal__input login-modal__input-password" type="password"
              name="user-password" id="password-field" placeholder="Пароль"
-             aria-label="password"
-             autocomplete="off" required>
-      <a class="login-form__restore-link" href="#">Я забыл пароль!</a>
-      <button class="login-form__submit-button button" type="submit">Войти
+             aria-label="user-password"
+             autocomplete="off" spellcheck="false" required>
+      <a class="login-modal__restore-link" href="#">Я забыл пароль!</a>
+      <button class="login-modal__submit-button button" type="submit">Войти
       </button>
       <button class="login-modal__close-button button" type="button">Закрыть
       </button>
+      <a class="login-modal__registration-link" href="registration.html">Регистрация</a>
     </form>
   </div>
   <div class="modal-overlay"></div>

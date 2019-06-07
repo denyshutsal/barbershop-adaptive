@@ -1689,10 +1689,7 @@ login-modal.scss
     position: fixed;
     left: 50%;
     margin-left: -230px;
-    z-index: 30;
     width: 460px;
-    padding-top: 50px;
-    padding-bottom: 55px;
     padding-right: 70px;
     padding-left: 70px;
   }
@@ -1773,14 +1770,14 @@ login-modal.scss
   margin-bottom: 25px;
 }
 
-.login-form {
+.login-modal__form {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.login-form__input {
+.login-modal__input {
   width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -1797,34 +1794,40 @@ login-modal.scss
   background-size: 15px 15px;
 }
 
-.login-form__input:last-of-type {
+.login-modal__input:last-of-type {
   margin-bottom: 15px;
 }
 
-.login-form__input:focus {
+.login-modal__input:focus {
   border-color: #826550;
 }
 
-.login-form__input-text {
+.login-modal__input-text {
   background-image: url("../img/login-field-ico.svg");
 }
 
-.login-form__input-password {
+.login-modal__input-password {
   background-image: url("../img/password-field-ico.svg");
 }
 
-.login-form__restore-link {
+.login-modal__registration-link {
+  margin-top: 15px;
+}
+
+.login-modal__restore-link,
+.login-modal__registration-link {
   flex-basis: 100%;
   margin-bottom: 15px;
   line-height: 30px;
   color: inherit;
 }
 
-.login-form__restore-link:hover {
+.login-modal__restore-link:hover,
+.login-modal__registration-link:hover {
   text-decoration: none;
 }
 
-.login-form__submit-button {
+.login-modal__submit-button {
   color: #fff;
   background-color: #826550;
   width: 45%;
@@ -1835,7 +1838,7 @@ login-modal.scss
 }
 
 @media (min-width: 1200px) {
-  .login-form__submit-button:active {
+  .login-modal__submit-button:active {
     background-color: #d5c9bd;
     color: #a99f95;
   }
@@ -1843,6 +1846,266 @@ login-modal.scss
     border: 1px solid #d5c9bd;
   }
   .login-modal__close-button:active {
+    background-color: #d5c9bd;
+    color: #a99f95;
+  }
+}
+
+/* ==========================================================================
+nojs-login.scss
+========================================================================== */
+.nojs-login-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #292929;
+  background-image: url("../img/bg-header.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .nojs-login-wrapper {
+    background-image: url("../img/bg-header@2x.jpg");
+  }
+}
+
+@media (min-width: 768px) {
+  .nojs-login-wrapper {
+    align-items: center;
+  }
+}
+
+.nojs-login {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 55px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+  color: #000;
+  background-color: #f8f5f2;
+}
+
+@media (min-width: 460px) {
+  .nojs-login {
+    width: 460px;
+    padding-right: 70px;
+    padding-left: 70px;
+  }
+}
+
+.nojs-login__title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 40px;
+  line-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nojs-login__text {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.nojs-login__form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nojs-login__input {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 45px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  line-height: 20px;
+  border: 1px solid #e5ddd5;
+  color: inherit;
+  background-color: #fff;
+  background-position: 93% 50%;
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+}
+
+.nojs-login__input:last-of-type {
+  margin-bottom: 15px;
+}
+
+.nojs-login__input:focus {
+  border-color: #826550;
+}
+
+.nojs-login__input-text {
+  background-image: url("../img/login-field-ico.svg");
+}
+
+.nojs-login__input-password {
+  background-image: url("../img/password-field-ico.svg");
+}
+
+.nojs-login__restore-link,
+.nojs-login__registration-link {
+  flex-basis: 100%;
+  margin-bottom: 15px;
+  line-height: 30px;
+  color: inherit;
+}
+
+.nojs-login__restore-link:hover,
+.nojs-login__registration-link:hover {
+  text-decoration: none;
+}
+
+.nojs-login__submit-button {
+  color: #fff;
+  background-color: #826550;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 1200px) {
+  .nojs-login__submit-button:active {
+    background-color: #d5c9bd;
+    color: #a99f95;
+  }
+}
+
+/* ==========================================================================
+nojs-registration.scss
+========================================================================== */
+.nojs-registration-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #292929;
+  background-image: url("../img/bg-header.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .nojs-registration-wrapper {
+    background-image: url("../img/bg-header@2x.jpg");
+  }
+}
+
+@media (min-width: 768px) {
+  .nojs-registration-wrapper {
+    align-items: center;
+  }
+}
+
+.nojs-registration {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 55px;
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: center;
+  color: #000;
+  background-color: #f8f5f2;
+}
+
+@media (min-width: 460px) {
+  .nojs-registration {
+    width: 460px;
+    padding-right: 70px;
+    padding-left: 70px;
+  }
+}
+
+.nojs-registration__title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 40px;
+  line-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nojs-registration__text {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.nojs-registration__form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nojs-registration__input {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 45px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  line-height: 20px;
+  border: 1px solid #e5ddd5;
+  color: inherit;
+  background-color: #fff;
+  background-position: 93% 50%;
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+}
+
+.nojs-registration__input:last-of-type {
+  margin-bottom: 15px;
+}
+
+.nojs-registration__input:focus {
+  border-color: #826550;
+}
+
+.nojs-registration__input-text {
+  background-image: url("../img/login-field-ico.svg");
+}
+
+.nojs-registration__input-email {
+  background-image: url("../img/email-field-ico.svg");
+}
+
+.nojs-registration__input-password {
+  background-image: url("../img/password-field-ico.svg");
+}
+
+.nojs-registration__link {
+  flex-basis: 100%;
+  margin-bottom: 15px;
+  line-height: 30px;
+  color: inherit;
+}
+
+.nojs-registration__link:hover {
+  text-decoration: none;
+}
+
+.nojs-registration__submit-button {
+  color: #fff;
+  background-color: #826550;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 1200px) {
+  .nojs-registration__submit-button:active {
     background-color: #d5c9bd;
     color: #a99f95;
   }

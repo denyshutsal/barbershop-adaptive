@@ -254,16 +254,18 @@
     <h2 class="login-modal__title">Личный кабинет</h2>
     <p class="login-modal__text">Введите свой логин и пароль, чтобы войти</p>
     <form class="login-modal__form" action="#" method="post">
-      <label for="login-field" class="visually-hidden">Логин</label>
+      <label class="visually-hidden">Логин
       <input class="login-modal__input login-modal__input-text" type="text"
-             name="user-login" id="login-field"
+             name="user-login"
              placeholder="Логин" aria-label="user-login" autocomplete="off" spellcheck="false"
       autofocus required>
-      <label for="password-field" class="visually-hidden">Пароль</label>
+      </label>
+      <label class="visually-hidden">Пароль
       <input class="login-modal__input login-modal__input-password" type="password"
-             name="user-password" id="password-field" placeholder="Пароль"
+             name="user-password" placeholder="Пароль"
              aria-label="user-password"
              autocomplete="off" spellcheck="false" required>
+      </label>
       <a class="login-modal__restore-link" href="#">Я забыл пароль!</a>
       <button class="login-modal__submit-button button" type="submit">Войти
       </button>
@@ -272,6 +274,42 @@
       <a class="login-modal__registration-link" href="registration.html">Регистрация</a>
     </form>
   </div>
+
+  <div class="registration-modal">
+    <h2 class="registration-modal__title">Личный кабинет</h2>
+    <p class="registration-modal__text">Введите свои имя, E-mail и пароль для регистрации</p>
+    <form class="registration-modal__form" action="#" method="post">
+      <label class="visually-hidden">Имя
+      <input class="registration-modal__input registration-modal__input-text" type="text"
+             name="user-name"
+             placeholder="Имя" aria-label="user-name" autocomplete="off" spellcheck="true"
+             autofocus required>
+      </label>
+      <label class="visually-hidden">E-mail
+      <input class="registration-modal__input registration-modal__input-email" type="email"
+             name="user-email"
+             placeholder="E-mail" aria-label="user-email" autocomplete="off" spellcheck="false"
+             required>
+      </label>
+      <label class="visually-hidden">Пароль
+      <input class="registration-modal__input registration-modal__input-password" type="password"
+             name="user-password" placeholder="Пароль"
+             aria-label="user-password"
+             autocomplete="off" required>
+      </label>
+      <label class="visually-hidden">Повторите пароль
+      <input class="registration-modal__input registration-modal__input-password" type="password"
+             name="user-password-repeat" placeholder="Повторите пароль"
+             autocomplete="off" required>
+      </label>
+      <button class="registration-modal__submit-button button" type="submit">Зарегистрироваться
+      </button>
+      <button class="registration-modal__close-button button" type="button">Закрыть
+      </button>
+      <a class="registration-modal__link" href="login.html">Уже зарегистрированы? Войдите</a>
+    </form>
+  </div>
+
   <div class="modal-overlay"></div>
 
   <script src="js/hamburger.js"></script>

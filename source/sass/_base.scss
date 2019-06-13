@@ -15,6 +15,11 @@ body {
   font-weight: $font-weight-base;
   color: $color-base;
   background-color: $bg-darkgrey;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  touch-action: manipulation;
+  //word-break: break-word;
 }
 
 img {
@@ -22,6 +27,17 @@ img {
   height: auto;
   vertical-align: middle;
   border-style: none;
+}
+
+video {
+  max-width: 100%;
+
+  /* just in case, to force correct aspect ratio */
+  height: auto !important;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .visually-hidden {

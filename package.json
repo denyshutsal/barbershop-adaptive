@@ -21,6 +21,7 @@
     "gulp-postcss": "8.0.0",
     "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.2",
+    "gulp-svgmin": "2.2.0",
     "gulp-svgstore": "7.0.1",
     "gulp-webp": "4.0.1",
     "semistandard": "13.0.1",
@@ -37,8 +38,9 @@
     "csslint": "stylelint \"source/sass/**/*.scss\" || exit 0",
     "cssfix": "stylelint \"source/sass/**/*.scss\" --fix",
     "images": "gulp images",
-    "svgstore": "gulp svgstore",
     "webp": "gulp webp",
+    "svg": "gulp svg",
+    "svgstore": "gulp svgstore",
     "build": "gulp css",
     "start": "gulp start"
   }

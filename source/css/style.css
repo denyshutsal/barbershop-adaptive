@@ -383,6 +383,10 @@ body {
   font-weight: 400;
   color: #f7f4f1;
   background-color: #292929;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  touch-action: manipulation;
 }
 
 img {
@@ -390,6 +394,16 @@ img {
   height: auto;
   vertical-align: middle;
   border-style: none;
+}
+
+video {
+  max-width: 100%;
+  /* just in case, to force correct aspect ratio */
+  height: auto !important;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .visually-hidden {
@@ -764,22 +778,24 @@ user-list.scss
   text-decoration: none;
 }
 
-.user-list__login-icon {
+.icon--header-login {
   position: absolute;
   top: 17px;
   left: 21px;
   width: 16px;
   height: 16px;
   opacity: 0.3;
-}
-
-.user-list__login-icon polygon {
   fill: #fff;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
   .user-list {
     width: 60px;
+  }
+  .icon--header-login {
+    top: 29px;
+    left: 12px;
   }
   .user-list__login {
     width: 60px;
@@ -787,21 +803,15 @@ user-list.scss
     padding: 0;
     font-size: 0;
   }
-  .user-list__login:hover .user-list__login-icon {
+  .user-list__login:hover .icon--header-login {
     opacity: 1;
-  }
-  .user-list__login:hover .user-list__login-icon polygon {
     fill: #826550;
+    color: #826550;
   }
-  .user-list__login:active .user-list__login-icon {
+  .user-list__login:active .icon--header-login {
     opacity: 0.3;
-  }
-  .user-list__login:active .user-list__login-icon polygon {
     fill: #fff;
-  }
-  .user-list__login-icon {
-    top: 29px;
-    left: 12px;
+    color: #fff;
   }
 }
 
@@ -809,6 +819,9 @@ user-list.scss
   .user-list {
     width: auto;
     max-width: 160px;
+  }
+  .icon--header-login {
+    left: 15px;
   }
   .user-list__login {
     position: relative;
@@ -832,17 +845,13 @@ user-list.scss
     color: rgba(0, 0, 0, 0.3);
     background-color: #fff;
   }
-  .user-list__login:hover .user-list__login-icon {
+  .user-list__login:hover .icon--header-login {
     opacity: 0.3;
-  }
-  .user-list__login:hover .user-list__login-icon polygon {
     fill: #000;
+    color: #000;
   }
-  .user-list__login:active .user-list__login-icon {
+  .user-list__login:active .icon--header-login {
     opacity: 0.1;
-  }
-  .user-list__login-icon {
-    left: 15px;
   }
 }
 
@@ -1093,8 +1102,10 @@ advantages.scss
   margin: 0 auto;
 }
 
-.advantages__slider svg {
+.advantages__slider .icon {
   margin-bottom: 25px;
+  fill: #826550;
+  color: #826550;
 }
 
 .owl-carousel {
@@ -1138,7 +1149,7 @@ advantages.scss
     padding-bottom: 0;
     border-bottom: none;
   }
-  .advantages__slider svg {
+  .advantages__slider .icon {
     margin: 0;
     position: absolute;
     top: 0;
@@ -1171,7 +1182,7 @@ advantages.scss
     padding-bottom: 0;
     border: none;
   }
-  .advantages__slider svg {
+  .advantages__slider .icon {
     position: inherit;
     margin-bottom: 25px;
   }
@@ -1515,10 +1526,6 @@ page-footer.scss
   border: 1px solid #3e3e3e;
 }
 
-.social__title {
-  display: none;
-}
-
 .page-footer__social {
   display: flex;
   flex-direction: row;
@@ -1526,20 +1533,22 @@ page-footer.scss
   margin-bottom: 20px;
 }
 
-.copyright__text {
-  font-weight: 400;
+.social__title {
+  display: none;
 }
 
 .social__link {
   overflow: hidden;
   text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   flex-grow: 1;
   height: 100px;
   padding: 0;
   font-size: 0;
   background-color: #292929;
-  background-repeat: no-repeat;
-  background-position: center;
   border: 0;
   border: 1px solid #3e3e3e;
 }
@@ -1552,19 +1561,12 @@ page-footer.scss
   border-left: 0;
 }
 
-.social__link--vkontakte {
-  background-image: url("../img/social-vk.svg");
-  background-size: 55px;
+.social__link .icon {
+  fill: #fff;
 }
 
-.social__link--facebook {
-  background-image: url("../img/social-fb.svg");
-  background-size: 20px;
-}
-
-.social__link--instagram {
-  background-image: url("../img/social-insta.svg");
-  background-size: 35px;
+.copyright__text {
+  font-weight: 400;
 }
 
 .copyright__link {
@@ -1602,6 +1604,12 @@ page-footer.scss
     border: 0;
     font-weight: 400;
   }
+  .page-footer__social {
+    order: 1;
+    width: 100%;
+    margin: 0;
+    margin-top: 50px;
+  }
   .page-footer__copyright {
     width: 160px;
   }
@@ -1610,12 +1618,6 @@ page-footer.scss
     padding-left: 0;
     padding-right: 0;
   }
-  .page-footer__social {
-    order: 3;
-    width: 100%;
-    margin: 0;
-    margin-top: 50px;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -1623,19 +1625,25 @@ page-footer.scss
     width: 960px;
   }
   .page-footer__social {
-    order: inherit;
-    display: block;
+    order: 0;
+    justify-content: space-between;
     width: 165px;
     margin: 0;
   }
+  .page-footer__social .icon {
+    width: 35px;
+    height: 35px;
+  }
   .social__title {
     display: inline;
+    flex-basis: 100%;
     font-weight: 400;
   }
   .social__link {
     width: 50px;
     height: 50px;
     margin-top: 15px;
+    flex-grow: 0;
   }
   .social__link:first-of-type {
     border-right: 1px solid #3e3e3e;
@@ -1648,6 +1656,9 @@ page-footer.scss
   }
   .social__link:active {
     background-color: #252525;
+  }
+  .social__link:active .icon {
+    fill: #676767;
   }
   .contacts__phone:hover {
     border: none;
@@ -1803,11 +1814,11 @@ login-modal.scss
 }
 
 .login-modal__input-text {
-  background-image: url("../img/login-field-ico.svg");
+  background-image: url("../img/popup-login-field.svg");
 }
 
 .login-modal__input-password {
-  background-image: url("../img/password-field-ico.svg");
+  background-image: url("../img/popup-password-field.svg");
 }
 
 .login-modal__registration-link {
@@ -1970,15 +1981,15 @@ registration-modal.scss
 }
 
 .registration-modal__input-text {
-  background-image: url("../img/login-field-ico.svg");
+  background-image: url("../img/popup-login-field.svg");
 }
 
 .registration-modal__input-email {
-  background-image: url("../img/email-field-ico.svg");
+  background-image: url("../img/popup-email-field.svg");
 }
 
 .registration-modal__input-password {
-  background-image: url("../img/password-field-ico.svg");
+  background-image: url("../img/popup-password-field.svg");
 }
 
 .registration-modal__submit-button {
@@ -2100,11 +2111,11 @@ nojs-login.scss
 }
 
 .nojs-login__input-text {
-  background-image: url("../img/login-field-ico.svg");
+  background-image: url("../img/popup-login-field.svg");
 }
 
 .nojs-login__input-password {
-  background-image: url("../img/password-field-ico.svg");
+  background-image: url("../img/popup-password-field.svg");
 }
 
 .nojs-login__restore-link,
@@ -2229,15 +2240,15 @@ nojs-registration.scss
 }
 
 .nojs-registration__input-text {
-  background-image: url("../img/login-field-ico.svg");
+  background-image: url("../img/popup-login-field.svg");
 }
 
 .nojs-registration__input-email {
-  background-image: url("../img/email-field-ico.svg");
+  background-image: url("../img/popup-email-field.svg");
 }
 
 .nojs-registration__input-password {
-  background-image: url("../img/password-field-ico.svg");
+  background-image: url("../img/popup-password-field.svg");
 }
 
 .nojs-registration__link {

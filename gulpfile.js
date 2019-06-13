@@ -3,13 +3,14 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
+const autoprefixer = require('autoprefixer');
 const postcss = require('gulp-postcss');
+const rename = require('gulp-rename');
+const csso = require('gulp-csso');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
-const csso = require('gulp-csso');
+const svgmin = require('gulp-svgmin');
 const svgstore = require('gulp-svgstore');
-const rename = require('gulp-rename');
-const autoprefixer = require('autoprefixer');
 const server = require('browser-sync').create();
 
 gulp.task('css', function () {
@@ -29,17 +30,11 @@ gulp.task('css', function () {
 });
 
 gulp.task('images', function () {
-  return gulp.src('source/img/*')
+  return gulp.src('source/img/*.{jpg,png,gif}')
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({progressive: true}),
-      imagemin.optipng({optimizationLevel: 5}),
-      imagemin.svgo({
-        plugins: [
-          {removeViewBox: false},
-          {cleanupIDs: false}
-        ]
-      })
+      imagemin.optipng({optimizationLevel: 5})
     ]))
     .pipe(gulp.dest('source/img'));
 });
@@ -51,8 +46,36 @@ gulp.task('images', function () {
 // number }
 gulp.task('webp', function () {
   return gulp.src('source/img/*.{jpg,png}')
-      .pipe(webp({quality: 50}))
-      .pipe(gulp.dest('source/img'));
+    .pipe(webp({quality: 50}))
+    .pipe(gulp.dest('source/img'));
+});
+
+gulp.task('svg', function () {
+  return gulp.src('source/img/*.svg')
+    .pipe(svgmin({
+      plugins: [{
+        removeTitle: true
+      }, {
+        removeDesc: true
+      }, {
+        removeViewBox: false
+      }, {
+        removeDimensions: true
+      }, {
+        sortAttrs: true
+      }, {
+        cleanupNumericValues: {
+          floatPrecision: 0,
+          leadingZero: true,
+          defaultPx: true,
+          convertToPx: true
+        }
+      }],
+      js2svg: {
+        pretty: true
+      }
+    }))
+    .pipe(gulp.dest('source/img'));
 });
 
 gulp.task('svgstore', function () {

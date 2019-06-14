@@ -1130,7 +1130,7 @@ advantages.scss
 @media (min-width: 768px) {
   .advantages {
     padding-top: 370px;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
     background-color: #353535;
   }
   .advantages__slider {

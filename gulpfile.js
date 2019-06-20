@@ -81,16 +81,18 @@ function jswatch(done) {
   done();
 }
 
+// TinyPNG WebStorm IDE plugin instead images gulp task for better results!
+
 // gulp images
-function images() {
-  return src('source/img/*.{jpg,png,gif}')
-    .pipe(imagemin([
-      imagemin.gifsicle({interlaced: true}),
-      imagemin.jpegtran({progressive: true}),
-      imagemin.optipng({optimizationLevel: 5})
-    ]))
-    .pipe(dest('source/img'));
-}
+// function images() {
+//   return src('source/img/*.{jpg,png,gif}')
+//     .pipe(imagemin([
+//       imagemin.gifsicle({interlaced: true}),
+//       imagemin.jpegtran({progressive: true}),
+//       imagemin.optipng({optimizationLevel: 5})
+//     ]))
+//     .pipe(dest('source/img'));
+// }
 
 // gulp webp
 // Webp (options) https://github.com/imagemin/imagemin-webp#imageminwebpoptions
@@ -161,7 +163,7 @@ exports.copy = copy;
 exports.css = css;
 exports.js = js;
 exports.jswatch = jswatch;
-exports.images = images;
+// exports.images = images; // TinyPNG WebStorm IDE plugin instead gulp task for better results!
 exports.webp = webp;
 exports.svg = svg;
 exports.svgsprite = svgsprite;

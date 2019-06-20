@@ -60,15 +60,9 @@
   },
   "scripts": {
     "test": "semistandard --verbose | snazzy",
-    "jsfix": "semistandard --fix",
     "csslint": "stylelint \"source/sass/**/*.scss\" || exit 0",
-    "cssfix": "stylelint \"source/sass/**/*.scss\" --fix",
-    "images": "gulp images",
-    "webp": "gulp webp",
-    "svg": "gulp svg",
-    "svgstore": "gulp svgstore",
     "clean": "gulp clean",
-    "build": "gulp build",
-    "start": "gulp start"
+    "start": "gulp start",
+    "build": "gulp build"
   }
 }

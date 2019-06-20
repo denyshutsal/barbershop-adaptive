@@ -60,9 +60,9 @@ function css() {
 // gulp js
 function js() {
   return src([
-    'source/js/hamburger.js',
-    'source/js/modal.js',
-    'source/js/owl-carousel.js'
+    'source/js/all/hamburger.js',
+    'source/js/all/modal.js',
+    'source/js/all/owl-carousel.js'
   ])
     .pipe(plumber())
     .pipe(sourcemaps.init())
@@ -150,7 +150,7 @@ function server() {
 
   watch(['source/sass/*.scss', 'source/sass/blocks/*.scss'], css);
   watch('source/*.html').on('change', browsersync.reload);
-  watch('source/js/*.js', series(js, jswatch));
+  watch('source/js/all/**/*.js', series(js, jswatch));
 }
 
 // ---------------------------------------------------------------------
@@ -168,5 +168,4 @@ exports.svgsprite = svgsprite;
 exports.server = server;
 
 exports.start = series(css, js, server);
-
 exports.build = series(parallel(css, js), clean, copy);

@@ -10,6 +10,7 @@
       "url": "https://github.com/denyshutsal/barbershop-adaptive/issues"
     }
   ],
+  "main": "gulpfile.js",
   "devDependencies": {
     "@babel/cli": "7.4.4",
     "@babel/core": "7.4.5",

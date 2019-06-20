@@ -569,13 +569,11 @@ main-nav.scss
 }
 
 .main-nav--opened .main-nav__toggle::before {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .main-nav--opened .main-nav__toggle::after {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .main-nav--opened .main-nav__toggle:active::before, .main-nav--opened .main-nav__toggle:active::after {
@@ -986,8 +984,7 @@ stats.scss
     left: -14px;
     border: 15px solid transparent;
     border-bottom-color: #fff;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    transform: rotate(45deg);
   }
   .stats__slogan {
     width: 240px;
@@ -1706,7 +1703,7 @@ login-modal.scss
   }
 }
 
-.modal-overlay {
+.overlay-modal {
   display: none;
   position: fixed;
   top: 0;
@@ -1719,51 +1716,26 @@ login-modal.scss
 
 .login-modal--opened {
   display: block;
-  -webkit-animation: bounce 0.6s;
-          animation: bounce 0.6s;
+  animation: bounce 0.6s;
 }
 
-.modal-overlay--opened {
+.overlay-modal--opened {
   display: block;
-  -webkit-animation: bounce 0.6s;
-          animation: bounce 0.6s;
-}
-
-@-webkit-keyframes bounce {
-  0% {
-    -webkit-transform: translateY(-2000px);
-            transform: translateY(-2000px);
-  }
-  70% {
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
-  }
-  90% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
+  animation: bounce 0.6s;
 }
 
 @keyframes bounce {
   0% {
-    -webkit-transform: translateY(-2000px);
-            transform: translateY(-2000px);
+    transform: translateY(-2000px);
   }
   70% {
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
+    transform: translateY(30px);
   }
   90% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -1814,11 +1786,11 @@ login-modal.scss
 }
 
 .login-modal__input-text {
-  background-image: url("../img/popup-login-field.svg");
+  background-image: url("../img/svg/popup-login-field.svg");
 }
 
 .login-modal__input-password {
-  background-image: url("../img/popup-password-field.svg");
+  background-image: url("../img/svg/popup-password-field.svg");
 }
 
 .login-modal__registration-link {
@@ -1905,32 +1877,26 @@ registration-modal.scss
 
 .registration-modal--opened {
   display: block;
-  -webkit-animation: bounce 0.6s;
-          animation: bounce 0.6s;
+  animation: bounce 0.6s;
 }
 
 .modal-overlay--opened {
   display: block;
-  -webkit-animation: bounce 0.6s;
-          animation: bounce 0.6s;
+  animation: bounce 0.6s;
 }
 
 @keyframes bounce {
   0% {
-    -webkit-transform: translateY(-2000px);
-            transform: translateY(-2000px);
+    transform: translateY(-2000px);
   }
   70% {
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
+    transform: translateY(30px);
   }
   90% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -1981,15 +1947,15 @@ registration-modal.scss
 }
 
 .registration-modal__input-text {
-  background-image: url("../img/popup-login-field.svg");
+  background-image: url("../img/svg/popup-login-field.svg");
 }
 
 .registration-modal__input-email {
-  background-image: url("../img/popup-email-field.svg");
+  background-image: url("../img/svg/popup-email-field.svg");
 }
 
 .registration-modal__input-password {
-  background-image: url("../img/popup-password-field.svg");
+  background-image: url("../img/svg/popup-password-field.svg");
 }
 
 .registration-modal__submit-button {
@@ -2111,11 +2077,11 @@ nojs-login.scss
 }
 
 .nojs-login__input-text {
-  background-image: url("../img/popup-login-field.svg");
+  background-image: url("../img/svg/popup-login-field.svg");
 }
 
 .nojs-login__input-password {
-  background-image: url("../img/popup-password-field.svg");
+  background-image: url("../img/svg/popup-password-field.svg");
 }
 
 .nojs-login__restore-link,
@@ -2240,15 +2206,15 @@ nojs-registration.scss
 }
 
 .nojs-registration__input-text {
-  background-image: url("../img/popup-login-field.svg");
+  background-image: url("../img/svg/popup-login-field.svg");
 }
 
 .nojs-registration__input-email {
-  background-image: url("../img/popup-email-field.svg");
+  background-image: url("../img/svg/popup-email-field.svg");
 }
 
 .nojs-registration__input-password {
-  background-image: url("../img/popup-password-field.svg");
+  background-image: url("../img/svg/popup-password-field.svg");
 }
 
 .nojs-registration__link {

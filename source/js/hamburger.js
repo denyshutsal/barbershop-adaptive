@@ -1,4 +1,4 @@
-// Main-nav menu (mobile viewport)
+// Hamburger (hamburger.js)
 //----------------------------------------------------------------------
 
 'use strict';

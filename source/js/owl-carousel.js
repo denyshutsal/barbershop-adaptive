@@ -1,4 +1,4 @@
-// Owl carousels
+// Owl carousels (owl-carousel.js)
 //----------------------------------------------------------------------
 
 $(document).ready(function() {

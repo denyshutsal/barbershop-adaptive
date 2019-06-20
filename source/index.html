@@ -36,16 +36,16 @@
   <meta name="theme-color" content="#ffffff">
 
   <!-- Stylesheets-->
-  <link rel="stylesheet" href="libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="libs/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="vendor/owl.carousel.min.css">
+  <link rel="stylesheet" href="vendor/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/main.min.css">
 
   <!-- https://scottjehl.github.io/picturefill/-->
   <script>
     // Picture element HTML5 shiv
     document.createElement( "picture" );
   </script>
-  <script src="libs/picturefill.min.js" async></script>
+  <script src="vendor/picturefill.min.js" async></script>
 </head>
 
 <body>
@@ -110,9 +110,9 @@
   <header class="page-header">
     <a class="page-header__logo">
       <picture>
-        <source media="(min-width: 1200px)" srcset="img/logotype-desktop.svg">
-        <source media="(min-width: 768px)" srcset="img/logotype-tablet.svg">
-        <img class="page-header__logo-image" src="img/logotype-mobile.svg"
+        <source media="(min-width: 1200px)" srcset="img/svg/logotype-desktop.svg">
+        <source media="(min-width: 768px)" srcset="img/svg/logotype-tablet.svg">
+        <img class="page-header__logo-image" src="img/svg/logotype-mobile.svg"
              width="226" height="30" alt="Барбершоп «Бородинский»">
       </picture>
     </a>
@@ -262,10 +262,10 @@
           <blockquote class="item reviews__item">
             <picture>
               <source type="image/webp" media="(min-width: 1200px)"
-                      srcset="img/travis-desktop.webp 1x, img/travis-desktop@2x.webp 2x">
+                      srcset="img/webp/travis-desktop.webp 1x, img/webp/travis-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)"
-                      srcset="img/travis-tablet.webp 1x, img/travis-tablet@2x.webp 2x">
-              <source type="image/webp" srcset="img/travis-mobile.webp 1x, img/travis-mobile@2x.webp 2x">
+                      srcset="img/webp/travis-tablet.webp 1x, img/webp/travis-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/webp/travis-mobile.webp 1x, img/webp/travis-mobile@2x.webp 2x">
 
               <source media="(min-width: 1200px)"
                       srcset="img/travis-desktop.jpg 1x, img/travis-desktop@2x.jpg 2x">
@@ -283,10 +283,10 @@
           <blockquote class="item reviews__item">
             <picture>
               <source type="image/webp" media="(min-width: 1200px)"
-                      srcset="img/john-desktop.webp 1x, img/john-desktop@2x.webp 2x">
+                      srcset="img/webp/john-desktop.webp 1x, img/webp/john-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)"
-                      srcset="img/john-tablet.webp 1x, img/john-tablet@2x.webp 2x">
-              <source type="image/webp" srcset="img/john-mobile.webp 1x, img/john-mobile@2x.webp 2x">
+                      srcset="img/webp/john-tablet.webp 1x, img/webp/john-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/webp/john-mobile.webp 1x, img/webp/john-mobile@2x.webp 2x">
 
               <source media="(min-width: 1200px)"
                       srcset="img/john-desktop.jpg 1x, img/john-desktop@2x.jpg 2x">
@@ -304,10 +304,10 @@
           <blockquote class="item reviews__item">
             <picture>
               <source type="image/webp" media="(min-width: 1200px)"
-                      srcset="img/ivan-desktop.webp 1x, img/ivan-desktop@2x.webp 2x">
+                      srcset="img/webp/ivan-desktop.webp 1x, img/webp/ivan-desktop@2x.webp 2x">
               <source type="image/webp" media="(min-width: 768px)"
-                      srcset="img/ivan-tablet.webp 1x, img/ivan-tablet@2x.webp 2x">
-              <source type="image/webp" srcset="img/ivan-mobile.webp 1x, img/ivan-mobile@2x.webp 2x">
+                      srcset="img/webp/ivan-tablet.webp 1x, img/webp/ivan-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/webp/ivan-mobile.webp 1x, img/webp/ivan-mobile@2x.webp 2x">
 
               <source media="(min-width: 1200px)"
                       srcset="img/ivan-desktop.jpg 1x, img/ivan-desktop@2x.jpg 2x">
@@ -420,14 +420,11 @@
     </form>
   </div>
 
-  <div class="modal-overlay"></div>
+  <div class="overlay-modal"></div>
 
-  <script src="js/hamburger.js"></script>
-  <script src="js/login-registration-modals.js"></script>
-  <script src="js/script.js"></script>
-  <script src="libs/jquery-3.3.1.min.js"></script>
-  <script src="libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-  <script src="js/owl-carousel.js"></script>
+  <script src="vendor/jquery-3.3.1.min.js"></script>
+  <script src="vendor/owl.carousel.min.js"></script>
+  <script src="js/main.min.js"></script>
 
 </body>
 

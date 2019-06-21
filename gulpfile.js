@@ -3,7 +3,7 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 
 const gulp = require('gulp');
-const babel = require("gulp-babel");
+const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const autoprefixer = require('autoprefixer');
@@ -50,7 +50,7 @@ function css() {
     ]))
     .pipe(dest('source/css'))
     .pipe(csso({
-      restructure: false,
+      restructure: false
     }))
     .pipe(rename('main.min.css'))
     .pipe(dest('source/css'))
@@ -81,18 +81,16 @@ function jswatch(done) {
   done();
 }
 
-// TinyPNG WebStorm IDE plugin instead images gulp task for better results!
-
 // gulp images
-// function images() {
-//   return src('source/img/*.{jpg,png,gif}')
-//     .pipe(imagemin([
-//       imagemin.gifsicle({interlaced: true}),
-//       imagemin.jpegtran({progressive: true}),
-//       imagemin.optipng({optimizationLevel: 5})
-//     ]))
-//     .pipe(dest('source/img'));
-// }
+function images() {
+  return src('source/img/*.{jpg,png,gif}')
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5})
+    ]))
+    .pipe(dest('source/img'));
+}
 
 // gulp webp
 // Webp (options) https://github.com/imagemin/imagemin-webp#imageminwebpoptions
@@ -163,7 +161,7 @@ exports.copy = copy;
 exports.css = css;
 exports.js = js;
 exports.jswatch = jswatch;
-// exports.images = images; // TinyPNG WebStorm IDE plugin instead gulp task for better results!
+exports.images = images;
 exports.webp = webp;
 exports.svg = svg;
 exports.svgsprite = svgsprite;

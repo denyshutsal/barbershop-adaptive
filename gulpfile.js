@@ -21,12 +21,12 @@ const svgstore = require('gulp-svgstore');
 const browsersync = require('browser-sync').create();
 
 // gulp clean
-function clean() {
+function clean () {
   return del('build');
 }
 
 // gulp copy
-function copy() {
+function copy () {
   return src([
     'source/fonts/**/*.{woff,woff2}',
     'source/img/**/*',
@@ -41,7 +41,7 @@ function copy() {
 }
 
 // gulp css
-function css() {
+function css () {
   return src('source/sass/main.scss')
     .pipe(plumber())
     .pipe(sass({ outputStyle: 'expanded' }))
@@ -58,7 +58,7 @@ function css() {
 }
 
 // gulp js
-function js() {
+function js () {
   return src([
     'source/js/all/hamburger.js',
     'source/js/all/modal.js',
@@ -76,18 +76,18 @@ function js() {
 }
 
 // gulp jswatch
-function jswatch(done) {
+function jswatch (done) {
   browsersync.reload();
   done();
 }
 
 // gulp images
-function images() {
+function images () {
   return src('source/img/*.{jpg,png,gif}')
     .pipe(imagemin([
-      imagemin.gifsicle({interlaced: true}),
-      imagemin.jpegtran({progressive: true}),
-      imagemin.optipng({optimizationLevel: 5})
+      imagemin.gifsicle({ interlaced: true }),
+      imagemin.jpegtran({ progressive: true }),
+      imagemin.optipng({ optimizationLevel: 5 })
     ]))
     .pipe(dest('source/img'));
 }
@@ -98,14 +98,14 @@ function images() {
 // height: number }
 // Resize the image. Happens after crop - Object { width: number, height:
 // number }
-function webp() {
+function webp () {
   return src('source/img/*.{jpg,png}')
-    .pipe(gulpwebp({quality: 50}))
+    .pipe(gulpwebp({ quality: 50 }))
     .pipe(dest('source/img/webp'));
 }
 
 // gulp svg
-function svg() {
+function svg () {
   return src('source/img/svg/*.svg')
     .pipe(svgmin({
       plugins: [{
@@ -134,7 +134,7 @@ function svg() {
 }
 
 // gulp svgsprite
-function svgsprite() {
+function svgsprite () {
   return src('source/img/svg/icon-*.svg')
     .pipe(svgstore({ inlineSvg: true }))
     .pipe(rename('sprite.svg'))
@@ -142,7 +142,7 @@ function svgsprite() {
 }
 
 // gulp server
-function server() {
+function server () {
   browsersync.init({
     server: 'source',
     cors: true

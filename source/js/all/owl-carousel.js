@@ -1,8 +1,8 @@
 // Owl carousels (owl-carousel.js)
-//----------------------------------------------------------------------
+// ----------------------------------------------------------------------
 
-$(document).ready(function() {
-  if ( $(window).width() < 768 ) {
+$(document).ready(function () {
+  if ($(window).width() < 768) {
     $('.owl-carousel').owlCarousel({
       loop: true,
       margin: 50,
@@ -18,15 +18,15 @@ $(document).ready(function() {
   }
 });
 
-$(window).resize(function() {
-  if ( $(window).width() < 768 ) {
+$(window).resize(function () {
+  if ($(window).width() < 768) {
     startCarousel();
   } else {
     stopCarousel();
   }
 });
 
-function startCarousel(){
+function startCarousel () {
   $('.advantages__slider, .reviews__slider').addClass('owl-carousel owl-theme owl-loaded owl-drag');
   $('.owl-carousel').owlCarousel({
     loop: true,
@@ -40,7 +40,7 @@ function startCarousel(){
   });
 }
 
-function stopCarousel() {
+function stopCarousel () {
   $('.owl-carousel').trigger('destroy.owl.carousel');
   $('.advantages__slider, .reviews__slider').removeClass('owl-carousel owl-theme owl-loaded owl-drag');
 }

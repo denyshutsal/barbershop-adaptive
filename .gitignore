@@ -1,5 +1,3 @@
-SNIPPETS/
-
 # Compiled source #
 ###################
 *.com
@@ -74,3 +72,5 @@ CVS
 .vscode
 *.pdf
 *.sublime*
+SNIPPETS/
+build

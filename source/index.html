@@ -189,8 +189,10 @@
 
     <section class="news">
       <div class="news__wrapper">
-        <h2 class="news__title">Новости и акции</h2>
-        <a href="#" class="news__to-all news__to-all--top button">Показать все</a>
+        <div class="news__heading">
+          <h2 class="news__title">Новости и акции</h2>
+          <a href="#" class="button news__button-top">Показать все</a>
+        </div>
         <ul class="news__list">
           <li class="news__item">
             <time class="news__date" datetime="2018-09-29">
@@ -219,15 +221,19 @@
               здесь подвох!</p>
           </li>
         </ul>
-        <a href="#" class="news__to-all news__to-all--bottom button">Показать
+        <div class="news__button-bottom-wrapper">
+          <a href="#" class="button news__button-bottom">Показать
           все</a>
+        </div>
       </div>
     </section>
 
     <section class="reviews">
       <div class="reviews__wrapper">
-        <h2 class="reviews__title">Отзывы о нас</h2>
-        <a href="#" class="reviews__write button">Оставить свой</a>
+        <div class="reviews__heading">
+          <h2 class="reviews__title">Отзывы о нас</h2>
+          <a href="#" class="button reviews__write">Оставить свой</a>
+        </div>
         <div class="reviews__slider owl-carousel owl-theme">
           <blockquote class="item reviews__item">
             <picture>

@@ -1165,12 +1165,12 @@ advantages.scss
     width: 960px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
   }
   .advantages__slider .item {
     box-sizing: border-box;
     width: 319px;
     text-align: center;
-    margin: 0;
     padding: 0 40px;
     border: 0;
     border-right: 1px solid #4a4a4a;
@@ -1202,16 +1202,19 @@ news.scss
   margin-left: auto;
 }
 
+.news__heading {
+  margin-bottom: 30px;
+}
+
 .news__title {
   margin: 0;
-  margin-bottom: 30px;
   font-size: 30px;
   line-height: 30px;
   text-align: center;
   text-transform: uppercase;
 }
 
-.news__to-all--top {
+.news__button-top {
   display: none;
 }
 
@@ -1230,14 +1233,10 @@ news.scss
   border-bottom: 1px solid #e5ddd5;
 }
 
-.news__item:nth-child(2) {
-  padding-bottom: 30px;
+.news__item:last-child {
+  padding-bottom: 0;
   margin-bottom: 0;
   border-bottom: none;
-}
-
-.news__item:last-child {
-  display: none;
 }
 
 .news__date {
@@ -1276,7 +1275,11 @@ news.scss
   margin: 0;
 }
 
-.news__to-all--bottom {
+.news__button-bottom-wrapper {
+  padding-top: 30px;
+}
+
+.news__button-bottom {
   width: 100%;
 }
 
@@ -1287,38 +1290,34 @@ news.scss
   }
   .news__wrapper {
     width: 83.3%;
+  }
+  .news__heading {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 50px;
   }
   .news__title {
-    display: inline-block;
     font-size: 40px;
-    margin-bottom: 0;
   }
-  .news__to-all--top {
+  .news__button-top {
     display: inline-block;
   }
-  .news__to-all--bottom {
+  .news__button-bottom-wrapper {
     display: none;
   }
   .news__list {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 50px;
   }
   .news__item {
     width: 35%;
-    margin-bottom: 0;
     padding-bottom: 0;
-    border: 0;
-  }
-  .news__item:nth-child(2) {
-    margin-right: 0;
-    padding-bottom: 0;
+    border: none;
   }
 }
 
@@ -1333,10 +1332,10 @@ news.scss
   .news__title {
     margin-left: 70px;
   }
-  .news__to-all--top:hover {
+  .news__button-top:hover {
     border: 1px solid #d5c9bd;
   }
-  .news__to-all--top:active {
+  .news__button-top:active {
     background-color: #d5c9bd;
     color: #a99f95;
   }
@@ -1375,9 +1374,12 @@ reviews.scss
   margin: 0 auto;
 }
 
+.reviews__heading {
+  margin-bottom: 30px;
+}
+
 .reviews__title {
   margin: 0;
-  margin-bottom: 30px;
   font-size: 30px;
   line-height: 30px;
   text-align: center;
@@ -1404,6 +1406,8 @@ reviews.scss
 }
 
 .reviews__author-name {
+  display: inline-block;
+  margin-bottom: 5px;
   font-size: 24px;
   line-height: 27px;
   font-weight: 700;
@@ -1412,8 +1416,7 @@ reviews.scss
 
 .reviews__text {
   margin: 0;
-  margin-top: 5px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   height: 110px;
   overflow: hidden;
 }
@@ -1421,32 +1424,32 @@ reviews.scss
 @media (min-width: 768px) {
   .reviews {
     padding-top: 70px;
-    padding-bottom: 50px;
+    padding-bottom: 70px;
   }
   .reviews__wrapper {
     width: 83.3%;
+  }
+  .reviews__heading {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 50px;
   }
   .reviews__title {
-    display: inline-block;
-    margin-bottom: 0;
     font-size: 40px;
   }
   .reviews__write {
     display: inline-block;
   }
-  .reviews__slider {
-    margin-top: 50px;
-  }
   .reviews__item {
     padding-left: 100px;
-    padding-bottom: 20px;
+    margin-bottom: 50px;
+    min-height: 90px;
   }
   .reviews__item:last-child {
+    margin-bottom: 0;
     padding-bottom: 0;
   }
   .reviews__author-image {
@@ -1456,6 +1459,8 @@ reviews.scss
   }
   .reviews__text {
     margin-bottom: 0;
+    height: auto;
+    overflow: auto;
   }
 }
 
@@ -1473,12 +1478,12 @@ reviews.scss
     background-color: #d5c9bd;
     color: #a99f95;
   }
-  .reviews__slider {
-    margin-top: 50px;
+  .reviews__heading {
+    margin-bottom: 50px;
   }
   .reviews__item {
     padding-left: 140px;
-    padding-bottom: 30px;
+    min-height: 125px;
   }
   .reviews__author-image {
     width: 110px;

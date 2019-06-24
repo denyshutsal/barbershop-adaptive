@@ -97,8 +97,7 @@ advantages.scss
       border: 0;
       border-right: 1px solid #4a4a4a;
 
-      &:last-child {
-        padding-bottom: 0;
+      &:nth-child(3n) {
         border: none;
       }
     }

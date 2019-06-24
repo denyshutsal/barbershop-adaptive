@@ -1339,11 +1339,15 @@ news.scss
     background-color: #d5c9bd;
     color: #a99f95;
   }
-  .news__item {
-    width: 21%;
+  .news__list {
+    justify-content: flex-start;
   }
-  .news__item:last-child {
-    display: block;
+  .news__item {
+    width: 22%;
+    margin-right: 6%;
+  }
+  .news__item:nth-child(3n) {
+    margin-right: 0;
   }
   .news__item:hover {
     color: #826550;

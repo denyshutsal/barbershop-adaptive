@@ -169,11 +169,16 @@ news.scss
     }
   }
 
-  .news__item {
-    width: 21%;
+  .news__list {
+    justify-content: flex-start;
+  }
 
-    &:last-child {
-      display: block;
+  .news__item {
+    width: 22%;
+    margin-right: 6%;
+
+    &:nth-child(3n) {
+      margin-right: 0;
     }
 
     &:hover {

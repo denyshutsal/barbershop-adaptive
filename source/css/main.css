@@ -1801,6 +1801,10 @@ login-modal.scss
   background-image: url("../img/svg/popup-password-field.svg");
 }
 
+.login-modal__restore-link {
+  margin-bottom: 15px;
+}
+
 .login-modal__registration-link {
   margin-top: 15px;
 }
@@ -1808,7 +1812,6 @@ login-modal.scss
 .login-modal__restore-link,
 .login-modal__registration-link {
   flex-basis: 100%;
-  margin-bottom: 15px;
   line-height: 30px;
   color: inherit;
 }
@@ -2093,10 +2096,13 @@ nojs-login.scss
   background-image: url("../img/svg/popup-password-field.svg");
 }
 
+.nojs-login__restore-link {
+  margin-bottom: 15px;
+}
+
 .nojs-login__restore-link,
 .nojs-login__registration-link {
   flex-basis: 100%;
-  margin-bottom: 15px;
   line-height: 30px;
   color: inherit;
 }
@@ -2228,7 +2234,6 @@ nojs-registration.scss
 
 .nojs-registration__link {
   flex-basis: 100%;
-  margin-bottom: 15px;
   line-height: 30px;
   color: inherit;
 }

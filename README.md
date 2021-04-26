@@ -1,16 +1,14 @@
-# barbershop-adaptive
+# Barbershop
 
-Адаптивная версия сайта Barbershop для портфолио (все файлы, включая build папку)
-
-GitHub Pages версия (https://denyshutsal.github.io/barbershop-adaptive-github-pages/)
+[Демо проекта](https://denyshutsal.github.io/barbershop-adaptive-github-pages/)
 
 В проекте:
 
 - Adaptive layout
 - CSS3, HTML5
-- CSS flexbox
+- Flexbox
 - BEM naming
-- Scss
+- SCSS
 - Gulp (autoprefixer, css/js concatenation and minification, svg/images optimization, webp, svgsprite)
 - Webp
 - SVG
@@ -18,8 +16,6 @@ GitHub Pages версия (https://denyshutsal.github.io/barbershop-adaptive-git
 - Adaptive images (picture + srcset + media queries)
 - Retina images
 - GIT VCS
-
-JetBrains Webstorm IDE
 
 Browserslist:
 - last 1 version

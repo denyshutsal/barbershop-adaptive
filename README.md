@@ -1,9 +1,8 @@
 # Barbershop
 
-[Демо проекта](https://denyshutsal.github.io/barbershop-adaptive.github.io/)
+[GitHub Pages link](https://denyshutsal.github.io/barbershop-adaptive.github.io/)
 
-В проекте:
-
+The project uses:
 - Adaptive layout
 - CSS3, HTML5
 - Flexbox

@@ -1,4 +1,4 @@
-# Barbershop
+# Barbershop (landing page)
 
 [GitHub Pages link](https://denyshutsal.github.io/barbershop-adaptive.github.io/)
 

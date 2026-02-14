@@ -1,6 +1,6 @@
 # Barbershop
 
-[Демо проекта](https://denyshutsal.github.io/barbershop-adaptive-github-pages/)
+[Демо проекта](https://github.com/denyshutsal/barbershop-adaptive.github.io)
 
 В проекте:
 
